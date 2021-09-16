@@ -1,6 +1,5 @@
 package com.example.myProjects.libraryClasses;
 
-import java.sql.Statement;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,13 +10,18 @@ import org.springframework.stereotype.Service;
 import com.example.myProjects.models.AcademicRecord;
 import com.example.myProjects.models.Student;
 
+
 @Service
 public class DatabaseHelper {
 	
 	private String student_info_table = "student_info";
 	private String academic_info_table = "academic_info";
-
-	@Autowired private JdbcTemplate jdbcTemplate;
+	private JdbcTemplate jdbcTemplate;
+	
+	@Autowired
+	public DatabaseHelper(JdbcTemplate jdbcTemplate) {
+		this.jdbcTemplate = jdbcTemplate;
+	}
 	
 	public String addStudent(Student student) {
 		try {

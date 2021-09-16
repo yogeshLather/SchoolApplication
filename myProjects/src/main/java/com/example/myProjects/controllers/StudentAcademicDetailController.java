@@ -13,8 +13,7 @@ import com.example.myProjects.models.AcademicRecord;
 @RequestMapping(value = "/")
 public class StudentAcademicDetailController {
 	
-	@Autowired
-	DatabaseHelper dbhelper;
+	@Autowired DatabaseHelper dbhelper;
 	
 	@RequestMapping(value = "/addStudentAcademicRecord", method = RequestMethod.GET)
 	public String addStudentAcademicRecord() {
